@@ -1,0 +1,63 @@
+body{
+    background-image: url('https://media.istockphoto.com/id/958693744/vector/abstract-red-light-trail-on-blue-background.jpg?s=1024x1024&w=0&k=20&c=NMWPgT3zSw2UxluLVNmhoQUcOuA_FgzQIvw5aDGQkVc=');
+background-size: cover;
+background-repeat: no-repeat;
+color: white;
+}
+h1{
+    font-size: 60px;
+    text-align: center;
+    margin-top: 1px;
+}
+form{
+    background-color:transparent;
+    height: 450px;
+   
+    width: 520px;
+    margin-left: 420px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 40px;
+    margin-top: 0px;
+    box-shadow: 0px 0px 60px rgb(206, 74, 96);
+    color: wheat;
+}
+input{
+    border-radius: 5px;
+    width: 200px;
+    align-items: center;
+    text-align: center;
+    margin-left: 150px;
+    height: 30px;
+    
+}
+label{
+    color: rgb(223, 202, 202);
+    font-size: 20px;
+    margin-left: 44px;
+}
+p{
+    color: rgb(241, 238, 238);
+}
+button{
+    height: 30px;
+    width: 300px;
+    color: white;
+    background-color: rgb(46, 25, 167);
+    border-radius: 40px;
+    margin-top: 10px;
+    align-content: center;
+    align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+p{
+    text-align: center;
+}
+a{
+    color: rgb(25, 7, 66);
+}
+

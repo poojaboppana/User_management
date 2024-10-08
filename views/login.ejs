@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+    
+    <form action="/login" method="post"> 
+        <div id="title">
+            <h1>Login page</h1>
+        </div>
+        <label for="Username">Username</label>  <br>
+        <input type="text" id="Username" name="Username" required style="display: inline;"> <br>
+        <label for="password">Password</label> <br>
+        <input type="password" id="password" name="password" required style="display: inline;"> <br>
+    </div>
+    <div>
+        <button type="submit">Login</button> <br></br>
+    </div>
+    <p>Dont have an account?<a href="/register">Register here</a></p>
+    </form>
+   
+    <% if (error_msg) { %>
+        <p style="font-weight: bold; color: red;"> <%=error_msg %></p>
+        <% } %>
+</body>
+</html>

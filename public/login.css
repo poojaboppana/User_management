@@ -1,0 +1,74 @@
+body{
+    background: linear-gradient(to bottom,  rgb(26, 26, 71),rgb(224, 30, 63));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+height: 100vh;
+}
+h1{
+    font-size: 70px;
+    text-align: center;
+    margin-top: 1px;
+}
+form{
+
+  background-color:white;
+    height: 450px;
+   
+    width: 470px;
+    margin-left: 420px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 40px;
+    margin-top: 80px;
+   
+    color: wheat;
+}
+input{
+    border-radius: 5px;
+    width: 250px;
+    align-items: center;
+    text-align: center;
+    margin-left: 120px;
+    height: 30px;
+    border: none;
+    background-color: rgb(247, 212, 170);
+}
+label{
+    color: black;
+    font-size: 20px;
+    margin-left: 120px;
+    margin-top: 15px;
+}
+p{
+    color: rgb(241, 238, 238);
+}
+button{
+    height: 30px;
+    width: 260px;
+    color: white;
+    background-color:rgb(224, 30, 63) ;
+    border-radius: 40px;
+    margin-top: 10px;
+    align-content: center;
+    align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+p{
+    text-align: center;
+    color: black;
+}
+a{
+    color: rgb(25, 7, 66);
+}
+#title{
+    display: block;
+    background-color: rgb(224, 30, 63);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    color: white;
+}

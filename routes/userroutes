@@ -1,0 +1,96 @@
+const express = require('express');
+const bcrypt = require('bcryptjs');
+const User = require('../models/usermodel'); 
+const router = express.Router();
+
+
+router.get('/', (req, res) => {
+  res.render('Home');
+});
+
+router.get('/login', (req, res) => {
+  res.render('login', { error_msg: null });
+});
+
+router.get('/register', (req, res) => {
+  res.render('register', { error_msg: null });
+});
+
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
+
+
+router.post('/register', async (req, res) => {
+  let error_msg;
+  const { Username, email, password, confirmpassword } = req.body;
+
+  try {
+    if (password !== confirmpassword) {
+      console.log('Passwords do not match');
+      error_msg = 'Passwords do not match';
+      return res.render('register', { error_msg });
+    }
+
+    const existingUser = await User.findOne({ Username });
+    if (existingUser) {
+      console.log('Username already exists');
+      error_msg = 'Username already exists, please use another Username';
+      return res.render('register', { error_msg });
+    }
+
+    const existingEmail = await User.findOne({ email });
+    if (existingEmail) {
+      console.log('Email already used');
+      error_msg = 'Email already used, please use another email';
+      return res.render('register', { error_msg });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      Username,
+      email,
+      password: hashedPassword,
+    });
+
+    await newUser.save();
+    console.log('New user registered successfully');
+    res.redirect('/login');
+  } catch (err) {
+    console.log('Registration failed', err);
+    error_msg = 'Registration failed, please try again!';
+    res.render('register', { error_msg });
+  }
+});
+
+
+router.post('/login', async (req, res) => {
+  let error_msg;
+  const { Username, password } = req.body;
+
+  try {
+    const validUser = await User.findOne({ Username });
+    if (!validUser) {
+      console.log('Invalid Username');
+      error_msg = 'Invalid Username';
+      return res.render('login', { error_msg });
+    }
+
+    const validPassword = await bcrypt.compare(password, validUser.password);
+    if (!validPassword) {
+      console.log('Incorrect password');
+      error_msg = 'Password is incorrect';
+      return res.render('login', { error_msg });
+    }
+
+    console.log('Login successful');
+    res.redirect('/dashboard');
+  } catch (err) {
+    console.log('Login failed', err);
+    error_msg = 'Login failed, please try again';
+    res.render('login', { error_msg });
+  }
+});
+
+module.exports = router;

@@ -11,6 +11,10 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
   res.render('login', { error_msg: null });
 });
+router.get('/users', async (req, res) => {
+  const data= await User.find();
+   res.send(data);
+});
 
 router.get('/register', (req, res) => {
   res.render('register', { error_msg: null });

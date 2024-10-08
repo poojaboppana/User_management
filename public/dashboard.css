@@ -1,6 +1,18 @@
 body{
-    text-align: center;
-    background-image: url('https://cssauthor.com/wp-content/uploads/2019/12/Bootstrap-4-Admin-Dashboard-Template.jpg');
+    
+    background-image: url('./dashboard.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
+a{
+    background-color: rgb(17, 148, 104);
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+    border-radius: 30px;
+    padding: 15px;
+   display: inline-block;
+    margin-left: 520px;
+    margin-top: 500px;
+}
+

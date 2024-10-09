@@ -1,6 +1,39 @@
 body{
     text-align: center;
-    background-image: url('./dashboard');
+    background-image: url('./dashboard.png');
     background-repeat: no-repeat;
     background-size: cover;
+}
+.users{
+    background-color: rgb(17, 148, 104);
+    text-decoration: none;
+    font-size: 50px;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+    
+    margin-top: 440px;
+
+    display: inline-block; 
+}
+.log{
+    display: inline-block;
+    margin-left: 1100px;
+    background-color: rgb(239, 240, 240);
+    color: black;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 30px;
+}
+.log:active{
+    background-color: blue;
+    box-shadow: 0px 0px 60px white;
+}
+li{
+    list-style: none;
+}
+a{
+text-decoration: none;
 }

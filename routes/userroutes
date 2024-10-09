@@ -19,7 +19,10 @@ router.get('/register', (req, res) => {
 router.get('/dashboard', (req, res) => {
   res.render('dashboard');
 });
-
+router.get('/users', async (req,res)=>{
+  const data= await User.find();
+   res.send(data);
+});
 
 router.post('/register', async (req, res) => {
   let error_msg;
@@ -93,4 +96,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get('/logout',(req,res)=>{
+  res.redirect('/');
+})
 module.exports = router;
